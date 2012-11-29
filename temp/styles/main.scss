@@ -1,0 +1,55 @@
+@import "normalize.scss";
+@import "helpers.scss";
+
+$text: rgb(30,30,30);
+$text-light: rgba(60,60,60,0.5);
+$primary: rgb(8,156,255);
+$light: rgba(8,156,255, 0.2);
+
+html, body { min-height:100%; width:100%; }
+body, textarea {
+	font-family: "Open Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+	font-size:18px; line-height:1.35em; color:$text;
+}
+.app { padding:0.4em 2% 3.5em; width:96%;}
+h1, h2, h3, ul, p { font-weight:300; }
+h1 { margin:0.2em 0; }
+
+// List
+ul {
+	list-style:none; padding:0; margin:0;
+	li { 
+		margin:0; padding:0.1em 0; cursor:pointer;
+		&:hover { color:$primary; }
+		.item { padding:0.2em 0; }
+		.edit { @extend .hidden; }
+		&.editing {
+			.item { @extend .hidden; }
+			.edit { @extend .visible;  }
+		}
+	}
+	ul { padding-left:1em; }
+}
+
+// Inputs
+textarea, input { 
+	width:100%; height:1.35em; padding:0.2em 0; margin:0; overflow:hidden; border-radius:0;
+	border:0; box-shadow:none; resize:none; color:$text; font-weight:300; cursor:pointer;
+	&:focus { outline:0; box-shadow:0 0 5px 2px $light; }
+}
+
+// Menu
+.buttons {
+	position:fixed; bottom:0px; left:0px; right:0px; width:96%; padding:0.4em 2%; background:#ffffff;
+	.btn { 
+		display:block; float:left; width:32%; margin-right:2%; height:1em; line-height:1em; 
+		padding:0.4em 0; background:$light; text-align:center; cursor:pointer; font-size:1.5em;
+		color:$primary;
+		&:nth-of-type(3n+0) { margin-right:0; }
+		&:hover { background:$primary; color:#ffffff; } 
+	}
+	textarea {
+		line-height:1.5em; width:96%; padding:0.4em 2%; background:$primary; color:#ffffff;
+		&:focus { box-shadow:none; }
+	}
+}
