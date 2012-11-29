@@ -1,4 +1,4 @@
 listr
 =====
 
-Messing around with Chrome Packaged Apps
+Working on a Chrome Packaged App w/ Yeoman, CoffeeScript, SASS.
